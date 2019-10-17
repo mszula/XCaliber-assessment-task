@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+    app:
+        build: backend/
+        working_dir: /app
+        ports:
+          - "8000:8080"
+        depends_on:
+          - mysql
+
+    mysql:
+        image: mysql:5.7.22
+        environment:
+          MYSQL_RANDOM_ROOT_PASSWORD: 1
+          MYSQL_DATABASE: xc_bonuses
+          MYSQL_USER: xc_bonuses
+          MYSQL_PASSWORD: xc_bonuses
+
+    frontend:
+        build: frontend/
+        ports:
+          - "80:80"
