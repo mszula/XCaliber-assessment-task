@@ -4,6 +4,7 @@ cold-start:
 	make build-images
 	make start
 	make tests
+	sleep 15
 	make migrate
 	make install-fixtures-bundle
 	make populate-fixtures
