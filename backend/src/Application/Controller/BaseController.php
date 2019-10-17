@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Application\Controller;
 
+use App\Application\Exception\ModelValidationException;
 use App\Application\Validator\ModelValidator;
 use League\Tactician\CommandBus;
-use App\Application\Exception\ModelValidationException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 abstract class BaseController extends AbstractController

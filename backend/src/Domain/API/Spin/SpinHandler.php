@@ -5,19 +5,11 @@ declare(strict_types=1);
 namespace App\Domain\API\Spin;
 
 use App\Domain\API\Spin\Exception\UnableToSpin;
-use App\Domain\Model\BonusWallet\BonusWallet;
-use App\Domain\Model\BonusWallet\BonusWalletRepositoryInterface;
-use App\Domain\Model\Player\Player;
-use App\Domain\Model\Wallet\Wallet;
-use App\Domain\Model\Wallet\WalletRepositoryInterface;
 use App\Domain\Service\Player\TotalBalanceCalculator;
 use App\Domain\Service\Spin\LooseAction;
 use App\Domain\Service\Spin\RandomGenerator;
 use App\Domain\Service\Spin\WageringRequirementsCalculator;
 use App\Domain\Service\Spin\WinAction;
-use App\Domain\Shared\Model\CommonWallet\ValueObject\CurrentValue;
-use App\Domain\Shared\Model\CommonWallet\ValueObject\Status;
-use App\Domain\Shared\ValueObject\Amount;
 
 final class SpinHandler
 {

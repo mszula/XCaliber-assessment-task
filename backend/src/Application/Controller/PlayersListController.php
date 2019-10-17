@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\Controller;
 
-use App\Domain\Shared\Model\Uuid;
 use App\ReadModel\Model\Player\PlayerReadModelRepositoryInterface;
-use App\ReadModel\Model\Wallet\WalletReadModelRepositoryInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

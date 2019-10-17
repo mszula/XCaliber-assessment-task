@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Application\Controller;
 
-use App\Application\Request\MakeDepositRequest;
-use App\Domain\API\MakeDeposit\MakeDepositCommand;
 use App\Domain\API\SimulateLogin\SimulateLoginCommand;
 use App\Domain\Shared\Model\Uuid;
 use App\ReadModel\Model\Player\PlayerReadModelRepositoryInterface;

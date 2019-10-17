@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\Controller;
 
-use App\Application\Request\MakeDepositRequest;
 use App\Application\Request\SpinRequest;
-use App\Domain\API\MakeDeposit\MakeDepositCommand;
 use App\Domain\API\Spin\SpinCommand;
 use App\Domain\Shared\Model\Uuid;
 use App\ReadModel\Model\Player\PlayerReadModelRepositoryInterface;
