@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Shared\Model\CommonWallet\Exception;
+namespace App\Domain\Shared\Model\CommonWallet\ValueObject\Exception;
 
-use App\Domain\Shared\Model\CommonWallet\InvalidArgument;
+use App\Domain\Exception\InvalidArgument;
 
 class InvalidStatus extends InvalidArgument
 {
     public static function empty(): self
     {
-        new self('Wallet status can\'t be empty.');
+        return new self('Wallet status can\'t be empty.');
     }
 
     public static function invalidValue(string $value): self
     {
-        new self(sprintf('Wallet status has invalid value "%s".', $value));
+        return new self(sprintf('Wallet status has invalid value "%s".', $value));
     }
 }

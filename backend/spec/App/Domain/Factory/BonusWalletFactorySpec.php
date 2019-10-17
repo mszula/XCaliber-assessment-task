@@ -67,6 +67,15 @@ class BonusWalletFactorySpec extends ObjectBehavior
             ->during('create', [$bonus, $player, new Amount(10)]);
     }
 
+    function it_is_should_throw_as_exception_due_to_percent_of_deposit_and_lack_of_amount(
+        Player $player
+    )
+    {
+        $bonus = $this->getBonus(RewardType::PERCENT_OF_DEPOSIT);
+        $this->shouldThrow(InvalidBonusType::lackOfDepositAmount())
+            ->during('create', [$bonus, $player]);
+    }
+
     private function getBonus(string $rewardType)
     {
         return new Bonus(

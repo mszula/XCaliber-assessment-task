@@ -6,10 +6,10 @@ namespace App\Domain\Shared\Model\CommonWallet\ValueObject\Exception;
 
 use App\Domain\Exception\InvalidArgument;
 
-class InvalidCurrentValue extends InvalidArgument
+class InvalidInitialValue extends InvalidArgument
 {
     public static function lowerThanZero(): self
     {
-        return new self('Current value can\'t be smaller than zero.');
+        return new self('Initial value can\'t be smaller than zero.');
     }
 }

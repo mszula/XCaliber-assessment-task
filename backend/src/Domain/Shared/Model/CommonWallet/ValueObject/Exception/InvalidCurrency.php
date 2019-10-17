@@ -10,11 +10,11 @@ class InvalidCurrency extends InvalidArgument
 {
     public static function empty(): self
     {
-        new self('Wallet currency can\'t be empty.');
+        return new self('Wallet currency can\'t be empty.');
     }
 
     public static function invalidValue(string $value): self
     {
-        new self(sprintf('Wallet currency has invalid value "%s".', $value));
+        return new self(sprintf('Wallet currency has invalid value "%s".', $value));
     }
 }

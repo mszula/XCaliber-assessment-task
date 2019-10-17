@@ -20,7 +20,7 @@ class CurrentValue extends IntegerValueObject
     private function validate(int $value): void
     {
         if ($value < 0) {
-            throw InvalidCurrentValue::smallerThanOne();
+            throw InvalidCurrentValue::lowerThanZero();
         }
     }
 }
