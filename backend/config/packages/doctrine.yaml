@@ -1,0 +1,41 @@
+doctrine:
+    dbal:
+        # configure these for your database server
+        driver: 'pdo_mysql'
+        server_version: '5.7'
+        charset: utf8mb4
+        default_table_options:
+            charset: utf8mb4
+            collate: utf8mb4_unicode_ci
+
+        url: '%env(resolve:DATABASE_URL)%'
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            App\Domain\Model\Player:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/doctrine/domain/model/player'
+                prefix: 'App\Domain\Model\Player'
+            App\Domain\Model\Bonus:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/doctrine/domain/model/bonus'
+                prefix: 'App\Domain\Model\Bonus'
+            App\Domain\Model\Wallet:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/doctrine/domain/model/wallet'
+                prefix: 'App\Domain\Model\Wallet'
+            App\Domain\Model\BonusWallet:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/doctrine/domain/model/bonus_wallet'
+                prefix: 'App\Domain\Model\BonusWallet'
+            App\Domain\Shared:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/doctrine/domain/shared'
+                prefix: 'App\Domain\Shared'

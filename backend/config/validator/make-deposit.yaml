@@ -1,0 +1,10 @@
+App\Application\Request\MakeDepositRequest:
+  properties:
+    amount:
+      - NotBlank:
+          message: 'AMOUNT.IS_BLANK'
+      - Type:
+          type: integer
+          message: 'AMOUNT.WRONG_TYPE'
+      - Positive:
+          message: 'AMOUNT.IS_TOO_LOW'

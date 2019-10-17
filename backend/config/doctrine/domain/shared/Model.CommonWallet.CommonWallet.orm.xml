@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="App\Domain\Shared\Model\CommonWallet\CommonWallet" table="wallet" inheritance-type="SINGLE_TABLE">
+        <discriminator-column name="type" type="string"/>
+        <discriminator-map>
+            <discriminator-mapping value="wallet"
+                                   class="App\Domain\Model\Wallet\Wallet"/>
+            <discriminator-mapping value="bonus_wallet"
+                                   class="App\Domain\Model\BonusWallet\BonusWallet"/>
+        </discriminator-map>
+
+        <embedded name="id" class="App\Domain\Shared\Model\Uuid" use-column-prefix="false"/>
+        <embedded name="currency" class="App\Domain\Shared\Model\CommonWallet\ValueObject\Currency" use-column-prefix="false"/>
+        <embedded name="initialValue" class="App\Domain\Shared\Model\CommonWallet\ValueObject\InitialValue" use-column-prefix="false"/>
+        <embedded name="currentValue" class="App\Domain\Shared\Model\CommonWallet\ValueObject\CurrentValue" use-column-prefix="false"/>
+        <embedded name="status" class="App\Domain\Shared\Model\CommonWallet\ValueObject\Status" use-column-prefix="false"/>
+    </entity>
+</doctrine-mapping>

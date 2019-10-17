@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="App\Domain\Model\Bonus\Bonus" table="bonus">
+        <embedded name="id" class="App\Domain\Shared\Model\Uuid" use-column-prefix="false"/>
+        <embedded name="name" class="App\Domain\Model\Bonus\ValueObject\Name" use-column-prefix="false"/>
+        <embedded name="trigger" class="App\Domain\Model\Bonus\ValueObject\Trigger" use-column-prefix="false"/>
+        <embedded name="rewardValue" class="App\Domain\Model\Bonus\ValueObject\RewardValue" use-column-prefix="false"/>
+        <embedded name="rewardType" class="App\Domain\Model\Bonus\ValueObject\RewardType" use-column-prefix="false"/>
+        <embedded name="wageringMultiplier" class="App\Domain\Model\Bonus\ValueObject\WageringMultiplier" use-column-prefix="false"/>
+    </entity>
+</doctrine-mapping>
